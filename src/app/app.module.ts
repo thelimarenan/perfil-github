@@ -1,22 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { BuscaUserComponent } from './busca-user/busca-user.component';
-
+import { UserService } from './user/user.service';
+import { BuscaUserModule } from './busca-user/busca-user.module';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuscaUserComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    MaterializeModule
+    MaterializeModule,
+    HttpClientModule,
+    BuscaUserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    UserService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

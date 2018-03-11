@@ -1,3 +1,7 @@
 <div class="container">
-  <busca-user></busca-user>
+  <busca-user 
+    (updateUserInfo)="onUpdateUserInfo($event)"
+    (errorUserInfo)="onErrorUserInfo($event)">
+  </busca-user>
+  <profile [profileUser]="userInfo"></profile>
 </div>

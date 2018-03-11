@@ -1,13 +1,20 @@
-<nav>
+<nav id="busca-usuario">
   <div class="nav-wrapper">
     <div class="input-field">
-      <input id="busca-usuario" type="search" required>
+      <input
+        id="input-busca-usuario"
+        type="search"
+        [(ngModel)]="inputBusca"
+        (keyup.enter)="buscarUsuario()">
       <label
+        id="bt-busca-usuario"
         class="label-icon"
-        for="busca-usuario">
-          <i class="material-icons">search</i>
+        for="input-busca-usuario">
+          <i class="material-icons busca">search</i>
       </label>
-      <i class="material-icons">close</i>
+      <i
+        class="material-icons"
+        (click)="limpaBusca()">close</i>
     </div>
   </div>
 </nav>
